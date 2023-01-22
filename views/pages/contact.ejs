@@ -1,8 +1,139 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <div containers>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="contact-form">
+        <div id="contact" class="box-shadow-full">
+          <div class="row">
 
+            <!-- form section -->
+            <div class="col-md-6">
+              <div class="title-box-2">
+                <h5 class="title-left">Send Message</h5>
+              </div>
+              <div>
+                <form role="form" id="contact-form">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group"> 
+                        <input type="text" name="firstName" class="form-control" id="firstName"
+                          placeholder="First Name" required="">
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group"> 
+                        <input type="text" name="lastName" class="form-control" id="lastName"
+                        placeholder="Last Name" required="">
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group"> 
+                        <input type="email" class="form-control" name="email" id="email"
+                          placeholder="Your Email" required="">
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group"> 
+                        <input type="phone" class="form-control" name="phone" id="phone"
+                          placeholder="Your Phone">
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group"> 
+                        <input type="text" class="form-control" name="subject" id="subject"
+                          placeholder="Subject" required="">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group"><textarea class="form-control" name="message" rows="10"
+                          placeholder="Message" id="message" required=""></textarea></div>
+                    </div>
+                    <div class="col-md-12 text-center mt-3"> 
+                      <button type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#contactMsgModal">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- self intro section -->
+            <div class="col-md-6">
+              <div class="title-box-2 pt-4 pt-md-0">
+                <h5 class="title-left"> Get in Touch</h5>
+              </div>
+              <div class="more-info">
+                <p class="lead"> I am an experienced software consultant with a deep understanding of system development and design. With over 7 years of experience in the industry, I have a proven track record of delivering high-quality software projects on time and within budget. I have worked with a variety of clients, from small startups to large enterprises, and have experience in a wide range of industries.</p>
+                <p class="lead">  My skills are in a variety of programming languages and technologies and can quickly adapt to new environments. Whether you need a web application, mobile app, or even a custom software solution, I have the technical expertise to deliver a high-quality product. My expertise in software development and project management makes me a valuable asset for any organization looking to outsource their software projects.</p>
+                <p class="lead">  To ensure that my clients are completely satisfied with the end product and commit to providing ongoing support and maintenance are always my first pirority. I understand that software projects are not one time event but rather a continuous process. I will be there for you every step of the way, from the initial consultation to the final delivery and beyond. Contact me to discuss how I can help you with your software development needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contactMsgModal" tabindex="-1" aria-labelledby="contactModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="contactModal">Confirm Message</h1>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <p id="userFullName"></p>
+        <p id="userEmail"></p>
+        <p id="userPhone"></p>
+        <p id="userSubject"></p>
+        <p id="userMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Confrim & Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .contact-form {
+    margin-top: 4rem;
+  }
+</style>
+
+<script>
+  const msgModal = document.getElementById('contactMsgModal');
+  msgModal.addEventListener('show.bs.modal', event => {
+    
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    if (!(firstName.length > 0 && lastName.length > 0 && email.length > 0 &&
+    phone.length > 0 && subject.length > 0 && message.length > 0)) {
+      const form = document.getElementById('contact-form');
+      form.reportValidity();
+      return event.preventDefault();
+    }
+
+    const fullNameDom = msgModal.querySelector('#userFullName');
+    const emailDom = msgModal.querySelector('#userEmail');
+    const phoneDom = msgModal.querySelector('#userPhone');
+    const subjectDom = msgModal.querySelector('#userSubject');
+    const msgDom = msgModal.querySelector('#userMessage');
+      
+    fullNameDom.textContent = `Your Name: ${firstName} ${lastName}`;
+    emailDom.textContent = `Your contact email: ${email}`;
+    phoneDom.textContent = `Your phone: ${phone}`;
+    subjectDom.textContent = `Subject: ${subject}`;
+    msgDom.textContent = `Message: ${message}`;
+    // api call to send the information to backend
+  })
+</script>

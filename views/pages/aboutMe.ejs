@@ -1,8 +1,110 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <div containers>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="box-shadow-full">
+        <div class="row">
+          <div class="col-md-6">
 
+            <!-- brief section -->
+            <div class="row">
+              <div class="col-sm-6 col-md-5">
+                <div class="about-img">
+                  <img src="/images/about-me.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-7">
+                <div class="about-info">
+                  <p><span class="title-s">Name: </span> <span>Vincent Tu</span></p>
+                  <p><span class="title-s">Title: </span> <span>Software Engineer</span></p>
+                  <p><span class="title-s">Email: </span> <span>sample@gmail.com</span></p>
+                  <p><span class="title-s">Phone: </span> <span>(617) 557-0089</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- skill section -->
+            <div class="skill">
+              <p class="title-s">Skill</p>
+
+              <span>HTML/CSS/JS</span> <span class="pull-right">85%</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+
+              <span>Golang(Gin, Echo)</span> <span class="pull-right">75%</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+
+              <span>Java</span> <span class="pull-right">70%</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+
+              <span>Python</span> <span class="pull-right">50%</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- introduction section -->
+          <div class="col-md-6">
+            <div class="about-me pt-4 pt-md-0">
+              <div class="title-box-2">
+                <h5 class="title-left"> About me</h5>
+              </div>
+              <p class="lead"> I am a seasoned senior software engineer with over six years of professional experience
+                in the industry. I have a diverse background, having worked both in startups and large enterprise
+                organizations. </p>
+              <p class="lead"> Throughout my career, I have gained expertise in a variety of programming languages and
+                technologies, and have a proven track record of delivering high-quality, scalable, and maintainable
+                software solutions. </p>
+              <p class="lead"> I am a strong problem-solver and a team player, with excellent communication and
+                leadership skills. I am always eager to take on new challenges and continue learning and growing as a
+                software engineer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<style>
+  /* outer container style */
+  .box-shadow-full {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* brief style section */
+  .about-img {
+    margin-bottom: 2rem;
+  }
+
+  .about-img img {
+    margin-left: 10px;
+  }
+
+  /* skill section */
+  .skill span {
+    color: #4e4e4e;
+  }
+
+  .skill .progress {
+    background-color: #c1bcba;
+    margin: 0.5rem 0 1.2rem 0;
+    border-radius: 0;
+    height: 0.7rem;
+  }
+
+  .skill .progress .progress-bar {
+    height: 0.7rem;
+    background-color: #3d2a24;
+  }
+</style>
