@@ -2,11 +2,16 @@
     <div class="bg-img" style="width: 100%; height:800px;"></div>
     
     <div class='console-container'>
-        <div>
+        <div class="col-md-6">
             <h1>Vincent Tu</h1>
             <p class="subtitle">いっしょけんめい / Software Craftsmen</p>
+
+            <div class="col-md-12 statement">
+              <h3>mission statement</h3>
+              <p>Empowering users through intuitive and efficient software solutions, driven by a passion for innovation and customer satisfaction.</p>
+            </div>
         </div>
-        <div style="padding-left: 20px;">
+        <div class="col-md-6" style="padding-left: 20px; margin-top:50px;">
             <span id='text'></span>
             <div class='console-underscore' id='console'>&#95;</div>
         </div>
@@ -16,40 +21,44 @@
 
 <style>
 .bg-img {
-    background-image: url('/images/home-bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+  background-image: url('/images/home-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .subtitle {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+.statement {
+  margin-top: 35px;
+  font-size: 20px;
 }
 
 .hidden {
-    opacity:0;
+  opacity:0;
 }
 .console-container {
-    font-size:3em;
-    text-align:center;
-    height:300px;
-    /* width:600px; */
-    display:block;
-    position:absolute;
-    color:white;
-    top:15%;
-    bottom:0;
-    left: 15%;
-    right:0;
-    margin:auto;
-    display: flex;
+  font-size:3em;
+  text-align:center;
+  height:300px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:15%;
+  bottom:0;
+  left: 15%;
+  right:0;
+  margin:auto;
+  display: flex;
 }
 .console-underscore {
-    display:inline-block;
-    position:relative;
-    top:-0.14em;
-    left:10px;
+  display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
 }
 </style>
 
@@ -59,12 +68,12 @@ consoleText(['Backend Engineer', 'System Architect', 'SRE', 'Tech Consultant', '
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
-  var visible = true;
-  var con = document.getElementById('console');
-  var letterCount = 1;
-  var x = 1;
-  var waiting = false;
-  var target = document.getElementById(id)
+  let visible = true;
+  let con = document.getElementById('console');
+  let letterCount = 1;
+  let x = 1;
+  let waiting = false;
+  let target = document.getElementById(id)
   target.setAttribute('style', 'color:' + colors[0])
   window.setInterval(function() {
 
@@ -72,9 +81,9 @@ function consoleText(words, id, colors) {
       waiting = true;
       target.innerHTML = words[0].substring(0, letterCount)
       window.setTimeout(function() {
-        var usedColor = colors.shift();
+        let usedColor = colors.shift();
         colors.push(usedColor);
-        var usedWord = words.shift();
+        let usedWord = words.shift();
         words.push(usedWord);
         x = 1;
         target.setAttribute('style', 'color:' + colors[0])
@@ -97,10 +106,8 @@ function consoleText(words, id, colors) {
     if (visible === true) {
       con.className = 'console-underscore hidden'
       visible = false;
-
     } else {
       con.className = 'console-underscore'
-
       visible = true;
     }
   }, 400)
