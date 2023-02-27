@@ -1,3 +1,4 @@
+// Geng Wei, Tu | 301337045
 let express = require('express');
 //create a reference to the db Schema which is the model
 let Contact = require('../models/contact');

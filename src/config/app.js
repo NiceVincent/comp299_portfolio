@@ -16,7 +16,8 @@ let flash = require('connect-flash');
 const mongoose = require('mongoose');
 const DB = require('./db');
 console.log('env => ', process.env.NODE_ENV)
-const URL = process.env.NODE_ENV == 'developmenet' ? DB.DEV_URI : process.env.PROD_URI;
+const URL = process.env.NODE_ENV == 'development' ? DB.DEV_URI : process.env.PROD_URI;
+console.log('URL => ', process.env.PROD_URI)
 mongoose.connect(URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
