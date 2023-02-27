@@ -1,0 +1,61 @@
+<!--Content for the Add Page-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="contact-form">
+                <div id="contact" class="box-shadow-full">
+                    <div class="col-md-6">
+                        <h1><%=title%></h1>
+                        <form class="form" method="POST">
+                            <div class="form-group mt-3">
+                                <label for="nameTextField">Name</label>
+                                <input type="text" class="form-control"
+                                id="nameTextField"
+                                placeholder = "Enter the contactor's name"
+                                name="name" required>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="phoneTextField">Phone</label>
+                                <input type="text" class="form-control"
+                                id="phoneTextField"
+                                placeholder = "Enter the contactor's phone number"
+                                name="phone" required>
+                            </div>
+                            
+                            <div class="form-group mt-3">
+                                <label for="emailTextField">Email</label>
+                                <input type="text" class="form-control"
+                                id="emailTextField"
+                                placeholder = "Enter the email address"
+                                name="email" required>
+                            </div>
+
+                            <div class="mt-3">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-edit"></i>submit
+                                </button>
+                                <a href="/contactList" class="btn btn-warning">
+                                    <i class="fas fa-undo"></i>cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<style>
+    .fullbox {
+      height: 100%;
+    }
+    .contact-form {
+      margin-top: 4rem;
+    }
+    .box-shadow-full {
+        display: flex;
+        justify-content: center;
+    }
+</style>
